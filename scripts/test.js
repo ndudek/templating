@@ -1,0 +1,3 @@
+function done(callback) {
+    callback();
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+    <title>Templating, AJAX &amp; APIs</title>
+
+    <!-- DATATABLES -->
+    <!-- DATATABLES -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>Ajax &amp; Templating Homework 5</h1>
+      <p>This exercise shows how to get data from an API and insert it back into the page.</p>
+        <ul>
+          <li>User contact details &amp; company</li>
+          <li>Using bootstrap with tables</li>
+          <li>Pagination</li>
+        </ul>
+    </div>
+  </header>
+
+  <div class="container">
+
+      <table id="userlist" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+
+      <script id="user-item" type="text/x-handlebars-template">
+
+        <tbody id="paging">
+          <tr>
+            <td>{{this.username}}</td>
+            <td>{{this.name}} </td>
+            <td>{{this.email}} </td>
+          </tr>
+        </tbody>
+
+      </script>
+    </table>
+
+
+  </div>
+
+
+
+<!--<section id="userlist">
+
+<table id="userlist" class="table table-striped table-bordered" cellspacing="0" width="100%">
+
+</table>
+
+
+  class="alert alert-info"
+
+</section>
+
+  <table id="userlist">
+    <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{{this.username}}</td>
+          <td>{{this.email}}</td>
+        </tr>
+    </tbody>
+
+  </table>-->
+
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+    <!-- Handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+    <script src="./scripts/main.js"></script>
+
+</body>
+</html>
