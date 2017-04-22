@@ -10,15 +10,6 @@ $(function(){
   $.ajax({
     method: 'GET',
     url: 'http://jsonplaceholder.typicode.com/users'
-    // success: function(data){
-    //   $('#userlist').DataTable({
-    //     data: data,
-    //     columns: [
-    //       {'data': 'Name'},
-    //       {'data': 'Email'}
-    //     ]
-    //   });
-    // }
 
   }).done(function(users){
     console.log('Users: ', users);
@@ -28,6 +19,15 @@ $(function(){
       $("#userlist").append(newHTML);
     });
     $('#userlist').DataTable({
+      //I was trying to show only 3 rows so we can see the pagination however I did not manage
+      //Problem I think is this: running DataTable before pulling data will show me 'No data available in table' as value
+      //in the table followed by actual data.
+      //When I run .DataTable after appending the data to the table it's not showing me this message.
+      //however doing that modification of pagination to only show 3 rows (instead of the 10 default ones from DataTable)
+      //will not work anymore as I think the reason is that the data has been pulled already at this stage and it's too
+      //late to modify.
+      //As the API only has 10 users I cannot see if the pagination is actually working
+
       // iDisplayLength: 3,
       // lengthMenu: [3, 6, 9, 12],
       // users: users,
@@ -41,22 +41,9 @@ $(function(){
     console.log('Error: ', err);
   });
 
+
   //$('#paging').pagination({limit:5});
   //$('#paging').tablePaginate({navigateType:'full',recordPerPage:3});
-
-
   //$('#myTable').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:4});
-
-
-  // $('#userlist').DataTable({
-  //   order: [[ 0, "asc" ]],
-  //   stateSave: true,
-  //   //saved states when reloading page: https://datatables.net/examples/basic_init/state_save.html
-  //   //For his exercise I've worked with bootstrap CSS framework
-  //
-  // });
-
-
-
 
 });
